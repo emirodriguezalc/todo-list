@@ -1,13 +1,13 @@
-import { isCompositeComponentWithType } from 'react-dom/test-utils';
-import './ListItems.css';
+import React from "react";
+import './styles.css';
 import Entry from '../entry/Entry';
 
-function ListItems({ entryArr }) {
+function ListItems({ entryArr, setEntryArr }) {
  return (
   entryArr.map((entry) => (
-   <section className="ListItems">
-    <Entry title={entry.title} body={entry.body} />
-   </section>
+   <li className={`entry-container ${entry.done && 'done'}`} key={entry.id} >
+    <Entry entry={entry} setEntryArr={setEntryArr} entryArr={entryArr} />
+   </li>
   ))
 
  );

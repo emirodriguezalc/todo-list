@@ -1,0 +1,11 @@
+.entry-container {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background-color: rgb(235, 232, 226);
+  border-bottom: 1px solid white;
+}
+
+.entry-container:hover {
+  filter: brightness(85%);
+}

@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import './App.css';
 import Form from './components/form/Form';
-import ListItems from './components/listItems/ListItems'
+import ListItems from './components/listItems/ListItems';
+import Header from './components/header/Header'
 
 function App() {
-  // const entryArr = [{ title: 'lala', body: 'lele' }, { title: 'hola', body: 'chau' }, { title: 'hi', body: 'bye' }];
-  const [inputValue, setInputValue] = useState({});
-  const [entryArr, setEntryArr] = useState({});
-  console.log(inputValue, 'app');
+  const [entryArr, setEntryArr] = useState([]);
   return (
     <div className="App">
-      <Form setInputValue={setInputValue} />
-      {inputValue && <ListItems entryArr={entryArr} />}
+      <Header />
+      <Form setEntryArr={setEntryArr} entryArr={entryArr} />
+      <ul class="entry-list-container">
+        <ListItems entryArr={entryArr} setEntryArr={setEntryArr} />
+      </ul>
+
     </div>
   );
 }

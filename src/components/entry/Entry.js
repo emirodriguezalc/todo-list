@@ -1,10 +1,26 @@
-import './Entry.css';
+import React from "react";
+import './styles.css';
 
-function Entry({ title, body }) {
+function Entry({ entry, setEntryArr, entryArr }) {
+
+ const handleDelete = ((e) => {
+  setEntryArr(entryArr.filter((selected) => selected.id !== entry.id))
+ })
+
+ const handleCheckbox = (() => {
+  setEntryArr(entryArr.map(selected => {
+   if (selected.id === entry.id) {
+    selected.done = !entry.done
+   } return selected;
+  }));
+
+ })
  return (
-  <section className="Entry">
-   <h1>{title}</h1>
-   <h1>{body}</h1>
+  <section className="entry-wrapper">
+   <h2 id="entryTitle" class="entry-title">{entry.title}</h2>
+   <p id="entryBody" class="entry-body">{entry.body}</p>
+   <input type="checkbox" onClick={handleCheckbox}></input>
+   <button onClick={(e) => handleDelete(e)}>Delete</button>
   </section>
  );
 }

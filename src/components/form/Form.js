@@ -1,28 +1,41 @@
-import './Form.css';
+import React from "react";
+import './styles.css';
 
-function Form({ setInputValue, entryArr, setEntryArr }) {
-  //esto deberia tenerlo en el padre en realidad
-
+function Form({ entryArr, setEntryArr }) {
   const submitHandler = (e => {
-    let title = document.getElementById('input-title').value;
-    let body = document.getElementById('input-body').value;
-    let object = {
-      title, body
-    }
-
     e.preventDefault()
-    setInputValue(object)
+    setEntryArr([
+      ...entryArr,
+      {
+        title: document.getElementById('input-title').value,
+        body: document.getElementById('input-body').value,
+        done: false,
+        id: Math.random()
+      }
+    ])
     document.getElementById('input-title').value = "";
     document.getElementById('input-body').value = "";
   })
   return (
-    <section className="Form">
-      <form onSubmit={(e) => submitHandler(e)}>
-        <input type='text' placeholder="insert title" id="input-title">
+    <section className="form-wrapper">
+      <form onSubmit={(e) => submitHandler(e)} className="add-section-inputs">
+        <input
+          type='text'
+          placeholder="insert title"
+          id="input-title"
+          class="entry-title-input"
+        >
         </input>
-        <textarea type='text' placeholder="insert body" id="input-body">
+        <textarea
+          type='text'
+          placeholder="insert body"
+          id="input-body"
+          class="entry-title-input"
+        >
         </textarea>
-        <button id="entryButton" className="entry-button" type="submit" >Add new entry</button>
+        <div className="add-section-button">
+          <button id="entryButton" className="entry-button" type="submit" >Add new entry</button>
+        </div>
       </form>
     </section>
   );

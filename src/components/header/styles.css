@@ -1,0 +1,85 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-left: 25px;
+  font-size: 47px;
+}
+
+form {
+  width: 100%;
+}
+
+.img-sloth {
+  width: 65%;
+  position: absolute;
+  right: -25px;
+  top: 17px;
+}
+
+.img-sloth:hover {
+  -webkit-animation: move 2s infinite alternate;
+  animation: move 2s infinite alternate;
+}
+
+@-webkit-keyframes move {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top right;
+  }
+  100% {
+    transform: rotate(-20deg);
+    transform-origin: top right;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top right;
+  }
+  100% {
+    transform: rotate(-20deg);
+    transform-origin: top right;
+  }
+}
+
+.img-checker {
+  width: 23%;
+  position: absolute;
+  right: 38%;
+  top: 3%;
+}
+
+.img-bubble {
+  width: 7%;
+  position: absolute;
+  right: 41%;
+  top: 4%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .img-bubble,
+  .img-checker {
+    display: none;
+  }
+}
