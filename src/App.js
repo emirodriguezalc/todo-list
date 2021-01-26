@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <Form setEntryArr={setEntryArr} entryArr={entryArr} />
-      <ul class="entry-list-container">
+      <ul className="entry-list-container">
         <ListItems entryArr={entryArr} setEntryArr={setEntryArr} />
       </ul>
 

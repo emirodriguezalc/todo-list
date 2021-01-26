@@ -18,5 +18,23 @@
 .done {
   background-color: rgba(105, 126, 31, 80%);
   text-decoration: line-through;
-  margin-top: auto;
+}
+
+.entry-action-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.entry-checkbox {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(105, 126, 31, 50%);
+  border: 3px solid rgba(105, 126, 31, 80%);
+}
+
+.entry-checkbox::after input:checked {
+  background-color: rgba(105, 126, 31);
+}
+
+.false {
 }
