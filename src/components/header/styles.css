@@ -70,7 +70,7 @@ body {
 }
 
 .show {
-  display: block;
+  display: block !important;
 }
 
 @media (max-width: 720px) {

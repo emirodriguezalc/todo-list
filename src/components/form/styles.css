@@ -41,3 +41,7 @@
   font-size: 1em;
   max-width: 500px;
 }
+
+.show {
+  display: block !important;
+}

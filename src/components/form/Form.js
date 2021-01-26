@@ -5,14 +5,14 @@ function Form({ entryArr, setEntryArr }) {
 
   const handleUserKeyPress = e => {
     if (e.key === "Enter" && !e.shiftKey) {
-      submitHandler(e)
+      submitHandler(e);
     }
   };
 
   const submitHandler = (e => {
     e.preventDefault()
     if (document.getElementById('input-title').value && document.getElementById('input-body').value) {
-      document.getElementById('checkingBubble').setAttribute('className', 'img-checker hide');
+      document.getElementById('checkingBubble').setAttribute('class', 'img-checker hide');
       setEntryArr([
         ...entryArr,
         {
@@ -26,7 +26,8 @@ function Form({ entryArr, setEntryArr }) {
       document.getElementById('input-title').value = "";
       document.getElementById('input-body').value = "";
     } else {
-      document.getElementById('checkingBubble').setAttribute('className', 'img-checker show');
+      console.log('empty');
+      document.getElementById('checkingBubble').setAttribute('class', 'img-checker show');
     }
   })
   return (
